@@ -1,54 +1,77 @@
-# Guess the Number 🎯
+# Đoán Số - Trò Chơi Thú Vị! 🎮✨
 
-Chào mừng đến với trò chơi "Đoán Số"! 🎉 Đây là một trò chơi thú vị và thử thách, nơi bạn sẽ cố gắng đoán số mà máy tính đã chọn trong một khoảng nhất định. Hãy xem bạn có thể đoán đúng trong bao nhiêu lần thử! 🧠🔍
+Chào mừng bạn đến với dự án **Đoán Số**! Trong trò chơi này, bạn sẽ thử tài phán đoán số mà chương trình đã chọn. Đây là một hoạt động thú vị để cải thiện kỹ năng lập trình của bạn và cũng là cách tuyệt vời để học hỏi về logic và điều kiện trong lập trình!
 
-## Mô Tả
+## Mô Tả Dự Án 📝
 
-Trong trò chơi này, máy tính sẽ chọn một số ngẫu nhiên trong khoảng từ 1 đến 100. Nhiệm vụ của bạn là đoán số đó. Máy tính sẽ cung cấp phản hồi cho bạn biết liệu dự đoán của bạn quá cao, quá thấp hay chính xác! 🎊
+Trò chơi "Đoán Số" cho phép người chơi đoán một số ngẫu nhiên mà máy tính đã chọn trong khoảng từ 1 đến 100. Chương trình sẽ cung cấp phản hồi cho người chơi để giúp họ biết được liệu số đoán của mình quá cao, quá thấp, hay đúng!
 
-## Tính Năng
+## Cách Chạy Dự Án 🚀
 
-- **Phản hồi tức thì**: Nhận phản hồi ngay lập tức cho mỗi lần đoán.
-- **Giới hạn lần đoán**: Cố gắng đoán số trong ít lần nhất có thể!
-- **Chúc mừng người chiến thắng**: Nhận thông báo khi bạn đoán đúng.
+1. **Cài đặt Python**: Đảm bảo bạn đã cài đặt Python trên máy tính của mình. Bạn có thể tải Python tại [python.org](https://www.python.org/downloads/).
 
-## Yêu Cầu
+2. **Chạy Mã Nguồn**: Sao chép mã nguồn và mở tệp Python (.py) trong một trình soạn thảo mã. Sau đó, chạy chương trình:
+   ```bash
+   python your_script.py
+   ```
 
-- Python 3.x
+## Mã Nguồn 📄
 
-## Hướng Dẫn Cài Đặt
+Dưới đây là mã nguồn chính của dự án:
 
-1. **Cài đặt Python**:
-   - Đảm bảo bạn đã cài đặt Python 3.x trên máy tính của mình. Bạn có thể tải xuống từ [trang chính thức của Python](https://www.python.org/downloads/).
+```python
+import random
 
-2. **Tạo Tệp Mới**:
-   - Mở một trình soạn thảo mã và tạo tệp mới có tên `guess_the_number.py`.
+def guess_the_number():
+    number_to_guess = random.randint(1, 100)  # Chọn số ngẫu nhiên từ 1 đến 100
+    attempts = 0  # Đếm số lần đoán
+    guessed = False  # Biến kiểm tra xem số đã được đoán chưa
 
-3. **Dán Mã**: 
-   - Sao chép mã nguồn từ file này và dán vào tệp `guess_the_number.py`.
+import random
 
-4. **Chạy Ứng Dụng**:
-   - Mở terminal hoặc command prompt, điều hướng đến thư mục chứa tệp và chạy lệnh:
-     ```bash
-     python guess_the_number.py
-     ```
+def guess_the_number():
+    print("🎉 Chào mừng bạn đến với trò chơi 'Guess the Number'! 🎉")
+    print("Tôi đã chọn một số ngẫu nhiên từ 1 đến 100. Bạn hãy cố gắng đoán số đó!")
 
-## Cách Chơi
+    # Tạo số ngẫu nhiên từ 1 đến 100
+    number_to_guess = random.randint(1, 100)
+    attempts = 0
 
-- Chương trình sẽ thông báo cho bạn biết số đã chọn và bạn cần nhập số bạn đoán.
-- Sau mỗi lần đoán, bạn sẽ nhận được phản hồi về việc số đoán của bạn có thấp hơn, cao hơn, hay chính xác.
-- Hãy cố gắng đoán đúng trong ít lần thử nhất có thể! 🏆
+    while True:
+        try:
+            # Nhập số đoán từ người chơi
+            guess = int(input("Nhập số của bạn: "))
+            attempts += 1
 
-## Tính Năng Nâng Cao (Có thể thêm sau)
+            if guess < 1 or guess > 100:
+                print("Vui lòng nhập một số trong khoảng từ 1 đến 100.")
+                continue
 
-- Cung cấp số lần thử mà bạn đã thực hiện.
-- Thêm chế độ cho người chơi đoán số trong khoảng khác.
-- Lưu điểm số để theo dõi thành tích của người chơi.
+            if guess < number_to_guess:
+                print("Số bạn đoán thấp hơn số cần đoán. Hãy thử lại!")
+            elif guess > number_to_guess:
+                print("Số bạn đoán cao hơn số cần đoán. Hãy thử lại!")
+            else:
+                print(f"🎉 Chúc mừng! Bạn đã đoán đúng số {number_to_guess} sau {attempts} lần thử!")
+                break  # Kết thúc trò chơi
 
-## Góp Ý
+        except ValueError:
+            print("Vui lòng nhập một số hợp lệ!")
 
-Nếu bạn có bất kỳ ý tưởng nào để cải thiện trò chơi hoặc có câu hỏi, hãy để lại phản hồi cho chúng tôi!
+# Chạy trò chơi
+guess_the_number()
+```
+
+## Ghi Chú 📌
+
+- **Khám Phá Thêm**: Hãy thử thay đổi khoảng số hoặc thêm một số tính năng mới để làm cho trò chơi thú vị hơn!
+- **Chia Sẻ Sáng Tạo**: Nếu bạn tạo ra một phiên bản độc đáo của trò chơi, đừng quên chia sẻ với bạn bè và cộng đồng nhé! 🌍
+
+## Liên Hệ 🤝
+
+Nếu bạn có bất kỳ câu hỏi nào hoặc cần hỗ trợ, hãy liên hệ với chúng tôi qua [Fanpage CodeThinkers](https://www.facebook.com/CodeThinkers).
 
 ---
 
-Hãy tận hưởng trò chơi "Đoán Số" và thử thách bạn bè của bạn! 🎮✨
+Hãy cùng nhau khám phá và sáng tạo với lập trình nhé! 💖
+```
