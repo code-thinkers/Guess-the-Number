@@ -12,7 +12,7 @@ Trò chơi "Đoán Số" cho phép người chơi đoán một số ngẫu nhiê
 
 2. **Chạy Mã Nguồn**: Sao chép mã nguồn và mở tệp Python (.py) trong một trình soạn thảo mã. Sau đó, chạy chương trình:
    ```bash
-   python your_script.py
+   python GuessTheNumber.py
    ```
 
 ## Mã Nguồn 📄
