@@ -74,4 +74,3 @@ Nếu bạn có bất kỳ câu hỏi nào hoặc cần hỗ trợ, hãy liên h
 ---
 
 Hãy cùng nhau khám phá và sáng tạo với lập trình nhé! 💖
-```
